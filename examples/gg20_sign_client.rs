@@ -468,5 +468,6 @@ fn main() {
     ))
     .unwrap();
 
-    fs::write("signature".to_string(), sign_json).expect("Unable to save !");
+    let file = format!("{}.signature", message_str);
+    fs::write(file.to_string(), sign_json).expect("Unable to save !");
 }
